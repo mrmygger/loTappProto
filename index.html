@@ -10,9 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     
+
 </head>
-</head>
+
 <style>
+
 
     body {
       margin: 0;
@@ -20,7 +22,16 @@
       color: white;
       font-family: 'Lato', sans-serif;
       overflow: hidden;
-    }
+      -webkit-touch-callout: none !important;
+      -webkit-user-select: none;  /* Chrome all / Safari all */
+      -moz-user-select: none;/* Firefox all */
+      -ms-user-select: none; 
+      }
+
+    :focus {
+      outline: none;
+      box-shadow: none;
+      }
 
     #batteriSide {
       flex-direction: column;
@@ -71,7 +82,7 @@
 
     .reset {
       grid-area: 2 / 1 / 3 / 2;
-      opacity: 50%;
+      opacity: 90%;
       align-self: center;
       margin: 0 auto;
     }
@@ -81,7 +92,7 @@
     }
 
     .reset img {
-      height: 8vh;
+      height: 10vh;
     }
 
     .control1 {
@@ -170,8 +181,6 @@
       height: 7vh;
     }
 
-    
-
     </style>
 
 
@@ -195,13 +204,13 @@
 
 <div class="topBar">
 <img src="img/linakLogo.png" alt="linak logo">
-<img src="img/selector.png" alt="selec chair logo">
+<img src="img/selector.png" alt="select chair logo">
 </div>
 
 <div class="background"></div>
 
 <div class="reset">
-    <img src="img/ResetChair.png" alt="reset chair logo">
+  <img src="img/ResetChair.svg" alt="reset chair logo">
 </div>
 
 <div class="control1 animate__animated animate__fadeIn">
@@ -227,10 +236,6 @@ onmouseup="resetStyle2(), resetValue()" ontouchend="resetStyle2(), resetValue()"
 <img class="arrowRight2 arrow" src="arrow.svg" alt="arrow">
 
 </div>
-
-
-
-
 
 <nav class="navBar">
 
@@ -322,4 +327,5 @@ function batteryHide() {
 }
 
 </script>
+
 </html>
