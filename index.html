@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<!--
+  For at lave A versionen skal: 
+   - Width 90% skal være slået fra i .slider i style
+   - Arrows skal ikke være udkommenteret i html og javascript funktionerne
+   - sliderShow og sliderHide skal være slået fra i javascript
+  
+  For at lave B versionen skal:
+   - Width 90% skal være slå til i .slider i style
+   - Arrows skal være udkommenteret i html og javascript funktionerne
+   - reset img i html skal rettes til img/ResetChair2.svg
+ -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -45,10 +55,6 @@
       color: white;
       font-family: 'Lato', sans-serif;
       overflow: hidden;
-      -webkit-touch-callout: none !important;
-      -webkit-user-select: none;  /* Chrome all / Safari all */
-      -moz-user-select: none;/* Firefox all */
-      -ms-user-select: none; 
       }
 
     :focus {
@@ -143,8 +149,9 @@
       outline: none;
       -webkit-transition: .2s;
       transition: opacity .2s;
+      background: rgba(255, 255, 255, 0);
+      width: 90%;
     }
-    
 
     /*ball style*/
     .slider::-webkit-slider-thumb {
@@ -156,6 +163,7 @@
       border: solid 3px white;
       cursor: pointer;
       background-color: #3D5AF1;
+      opacity: 1;
     }
     
     .slider::-moz-range-thumb {
@@ -233,30 +241,30 @@
 <div class="background"></div>
 
 <div class="reset">
-  <img src="img/ResetChair.svg" alt="reset chair logo">
+  <img src="img/ResetChair2.svg" alt="reset chair logo">
 </div>
 
 <div class="control1 animate__animated animate__fadeIn">
 
-<img class="arrowLeft arrow" src="arrow.svg" alt="arrow">
+<!--<img class="arrowLeft arrow" src="arrow.svg" alt="arrow">-->
 
     <input class="slider" id="ball" type="range" value="500" min="1" max="1000" 
     ontouchstart="newStyle()" onmousedown="newStyle()" 
     onmouseup="resetStyle(), resetValue()" ontouchend="resetStyle(), resetValue()">
 
-<img class="arrowRight arrow" src="arrow.svg" alt="arrow">
+<!--<img class="arrowRight arrow" src="arrow.svg" alt="arrow">-->
 
 </div>
 
 <div class="control2 animate__animated animate__fadeIn">
 
-  <img class="arrowLeft2 arrow" src="arrow.svg" alt="arrow">
+  <!--<img class="arrowLeft2 arrow" src="arrow.svg" alt="arrow">-->
 
 <input class="slider" id="ball2" type="range" value="500" min="1" max="1000" 
 ontouchstart="newStyle2()" onmousedown="newStyle2()"
 onmouseup="resetStyle2(), resetValue()" ontouchend="resetStyle2(), resetValue()">
 
-<img class="arrowRight2 arrow" src="arrow.svg" alt="arrow">
+<!--<img class="arrowRight2 arrow" src="arrow.svg" alt="arrow">-->
 
 </div>
 
@@ -295,8 +303,12 @@ function newStyle() {
   ball.addEventListener("input", () => {
   s.textContent = `#ball::-webkit-slider-thumb{background-color: white;)}`
 
-  document.querySelector('.arrowLeft').style.opacity = "1"
-  document.querySelector('.arrowRight').style.opacity = "1"
+/*  document.querySelector('.arrowLeft').style.opacity = "1"
+  document.querySelector('.arrowRight').style.opacity = "1"*/
+
+  // sliders show
+  let slider = document.querySelector("#ball")
+  slider.style.background = "rgba(255, 255, 255, 0.5)"
 })
 }
 
@@ -305,8 +317,12 @@ function resetStyle() {
   document.head.appendChild(s);
   s.textContent = `#ball::-webkit-slider-thumb{background-color: #3D5AF1;)}`
 
-  document.querySelector('.arrowLeft').style.opacity = "0"
-  document.querySelector('.arrowRight').style.opacity = "0"
+ /* document.querySelector('.arrowLeft').style.opacity = "0"
+  document.querySelector('.arrowRight').style.opacity = "0"*/
+
+  // sliders hide
+  let slider = document.querySelector("#ball")
+  slider.style.background = "rgba(255, 255, 255, 0)"
 }
 
 //for control 2
@@ -316,8 +332,12 @@ function newStyle2() {
   ball2.addEventListener("input", () => {
   s.textContent = `#ball2::-webkit-slider-thumb{background-color: white;)}`
 
-  document.querySelector('.arrowLeft2').style.opacity = "1"
-  document.querySelector('.arrowRight2').style.opacity = "1"
+ /* document.querySelector('.arrowLeft2').style.opacity = "1"
+  document.querySelector('.arrowRight2').style.opacity = "1"*/
+
+  // sliders show
+  let slider = document.querySelector("#ball2")
+  slider.style.background = "rgba(255, 255, 255, 0.5)"
 })
 }
 
@@ -326,8 +346,12 @@ function resetStyle2() {
   document.head.appendChild(s);
   s.textContent = `#ball2::-webkit-slider-thumb{background-color: #3D5AF1;)}`
 
-  document.querySelector('.arrowLeft2').style.opacity = "0"
-  document.querySelector('.arrowRight2').style.opacity = "0"
+ /* document.querySelector('.arrowLeft2').style.opacity = "0"
+  document.querySelector('.arrowRight2').style.opacity = "0"*/
+
+  // sliders hide
+  let slider = document.querySelector("#ball2")
+  slider.style.background = "rgba(255, 255, 255, 0)"
 }
 
 function resetValue() {
