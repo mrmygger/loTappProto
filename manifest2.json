@@ -1,0 +1,33 @@
+{
+    "theme_color": "white",
+    "background_color": "#3D5AF1",
+    "display": "fullscreen",
+    "scope": "/",
+    "start_url": "index.html",
+    "app_name": "loT recliner app",
+    "short_name": "loT",
+    "description": "",
+    "icons": [
+        {
+            "src": "img/icon/icon-192x192.png",
+            "sizes": "192x",
+            "type": "image/png"
+        },
+        {
+            "src": "img/icon/icon-256x256.png",
+            "sizes": "256x",
+            "type": "image/png"
+        },
+        {
+            "src": "img/icon/icon-384x384.png",
+            "sizes": "384x",
+            "type": "image/png"
+        },
+        {
+            "src": "img/icon/icon-512x512px.png",
+            "sizes": "512x",
+            "type": "image/png"
+        }
+    ],
+    "splash_pages": null
+}
